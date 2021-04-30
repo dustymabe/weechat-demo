@@ -18,8 +18,7 @@ RUN dnf install -y                    \
 ADD start-script.txt /weechat/start-script.txt
 RUN cat start-script.txt | \
     grep -v '^#'         | \
-    tr '\n' ';'          | \
-    > start-script
+    tr '\n' ';' > start-script
 
 # From https://wiki.archlinux.org/index.php/WeeChat#Tmux_Method
 ADD weechat.service  /etc/systemd/system/weechat.service
