@@ -1,0 +1,12 @@
+[Unit]
+Description=A WeeChat client running in Tmux
+After=network.target
+
+[Service]
+Type=forking
+RemainAfterExit=yes
+ExecStart=/usr/bin/tmux new -d -s weechat bash -c "weechat -d /weechat/ -r \"$(cat /weechat/start-script)\" "
+ExecStop=/usr/bin/tmux kill-session -t weechat
+
+[Install]
+WantedBy=default.target
