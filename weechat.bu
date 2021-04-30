@@ -86,7 +86,7 @@ storage:
           Type=oneshot
           RemainAfterExit=yes
           ExecStartPre=-podman pull registry.fedoraproject.org/fedora:34
-          ExecStart=-podman build -t localhost/weechat:latest git://gitlab.com/dustymabe/weechat-demo#main
+          ExecStart=-podman build -t localhost/weechat:latest git://github.com/dustymabe/weechat-demo#main
           ExecStartPost=-podman image prune --force
     - path: /home/core/.config/systemd/user/build-weechat-firstboot.service
       mode: 0644
