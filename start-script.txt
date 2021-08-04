@@ -1,9 +1,9 @@
-/server add freenode chat.freenode.net/6697 -ssl
-/set irc.server.freenode.sasl_username "fedorademo"
-/set irc.server.freenode.username "fedorademo"
-/set irc.server.freenode.realname "Fedora CoreOS Demo"
-/set irc.server.freenode.nicks "fedorademo"
-/set irc.server.freenode.autojoin #fedora-devel
-/set irc.server.freenode.autorejoin on
-/set irc.server.freenode.autoconnect on
-/set irc.server.freenode.autoreconnect on
+/server add libera irc.libera.chat/6697 -ssl
+/set irc.server.libera.sasl_username "fedorademo"
+/set irc.server.libera.username "fedorademo"
+/set irc.server.libera.realname "Fedora CoreOS Demo"
+/set irc.server.libera.nicks "fedorademo"
+/set irc.server.libera.autojoin #fedora-devel
+/set irc.server.libera.autorejoin on
+/set irc.server.libera.autoconnect on
+/set irc.server.libera.autoreconnect on
