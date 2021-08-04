@@ -78,13 +78,16 @@ storage:
         inline: |
           [Unit]
           Description=Build weechat container
-          After=network-online.target
-          Wants=network-online.target
+          # https://github.com/systemd/systemd/issues/3312#issuecomment-893009485
+          #After=network-online.target
+          #Wants=network-online.target
           [Service]
           # Give time for the build to complete
           TimeoutStartSec=10m
           Type=oneshot
           RemainAfterExit=yes
+          # sleep for network
+          ExecStartPre=sleep 10
           ExecStartPre=-podman pull registry.fedoraproject.org/fedora:34
           ExecStart=-podman build -t localhost/weechat:latest git://github.com/dustymabe/weechat-demo#main
           ExecStartPost=-podman image prune --force
